@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head', { title: title }) %>
+  <body>
+    <header>
+      <%- include('./partials/nav-bar') %>
+    </header>
+    <main class="new-message-page">
+      <section class="form-container">
+        <div class="form-header">
+          <p class="section-tag">Join the conversation</p>
+          <h1>Write a new message</h1>
+          <p>Share your thoughts with the community. What's on your mind?</p>
+        </div>
+        <form action="./new-message" method="POST" class="message-form">
+          <div class="form-group">
+            <label for="messageUser">Your name</label>
+            <input type="text" id="messageUser" name="user" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="messageText">Your message</label>
+            <textarea id="messageText" name="text" placeholder="Write something..." rows="6" required></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-button">Post message</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <%- include('./partials/foot') %>
+
+  </body>
+</html>

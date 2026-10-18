@@ -1,0 +1,25 @@
+{
+  "name": "message-board",
+  "version": "1.0.0",
+  "description": "A mini message board built with Express.js for The Odin Project.",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "build": "node --watch --env-file-if-exists=.env app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebisa22/message-board.git"
+  },
+  "keywords": [
+    "express",
+    "message-board",
+    "the-odin-project"
+  ],
+  "author": "Ebisa Eshetu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebisa22/message-board/issues"
+  }
+}

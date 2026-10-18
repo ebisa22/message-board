@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head', { title: title }) %>
+  <body>
+    <header>
+      <%- include('./partials/nav-bar') %>
+    </header>
+    <main class="home-page">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="hero-tagline">A place for conversations</p>
+          <h1>Welcome to the Message Board</h1>
+          <p class="hero-description">Share your thoughts, start a conversation, and see what others have to say. Every message is a chance to connect.</p>
+          <a href="./new-message" class="hero-button">Write a message</a>
+        </div>
+      </section>
+      <section class="messages-section">
+        <div class="messages-header">
+          <div>
+            <p class="section-tag">Community</p>
+            <h2>Recent messages</h2>
+          </div>
+          <a href="./new-message" class="new-message-link">+ New message</a>
+        </div>
+        <div class="messages-list">
+          <% messages.forEach((message, index) => { %>
+            <article class="message-card">
+              <div class="message-author">
+                <div class="author-avatar"><%= message.user.charAt(0).toUpperCase() %></div>
+                <div class="author-info">
+                  <h3><%= message.user %></h3>
+                  <p class="message-date"><%= message.added.toLocaleDateString() %></p>
+                </div>
+                <form action="/delete/<%=message.id%>" method="POST" class="delete-form">
+                  <button type="submit" class="delete-button" aria-label="Delete message">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 6h18"/>
+                      <path d="M8 6V4h8v2"/>
+                      <path d="m19 6-1 14H6L5 6"/>
+                      <path d="M10 11v5"/>
+                      <path d="M14 11v5"/>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+              <p class="message-text"><%= message.text %></p>
+            </article>
+          <% }) %>
+        </div>
+      </section>
+    </main>
+    <%- include('./partials/foot') %>
+  </body>
+</html>

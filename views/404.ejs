@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head', { title: '404' }) %>
+  <body>
+    <header>
+      <%- include('./partials/nav-bar') %>
+    </header>
+    <main class="error-page">
+      <section class="error-content">
+        <p class="section-tag">Error 404</p>
+        <h1>Looks like you're lost.</h1>
+        <p>The page you're looking for doesn't exist or may have been moved.</p>
+        <a href="./" class="hero-button">Back to home</a>
+      </section>
+    </main>
+    <%- include('./partials/foot') %>
+  </body>
+</html>
