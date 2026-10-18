@@ -5,7 +5,8 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "build": "node --watch --env-file-if-exists=.env app.js",
+    "start": "node app.js",
+    "dev": "node --watch --env-file-if-exists=.env app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
