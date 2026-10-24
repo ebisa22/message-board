@@ -26,11 +26,12 @@ const main=async()=>{
         console.log('seeding...')
         await client.connect();
         await client.query(SQL);
-    }catch(error){
-          throw new Error('problem connecting to database')
-    }finally{
         await client.end();
-        console.log('done')
+        console.log("done");
+
+    }catch(error){
+          console.error(error);
+          throw error;
     }
 
 }
