@@ -5,9 +5,12 @@ const main=async()=>{
      if (!database_url) {
        throw new Error("database url missing");
      }
-    const client=new Client({
-        connectionString:database_url
-    })
+    const client = new Client({
+      connectionString: database_url,
+      ...(database_url.includes("render.com") && {
+        ssl: { rejectUnauthorized: false },
+      }),
+    });
    
  const SQL = `
      CREATE TABLE IF NOT EXISTS messages (
