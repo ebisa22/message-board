@@ -14,6 +14,20 @@
           <a href="./new-message" class="hero-button">Write a message</a>
         </div>
       </section>
+
+      <section class="search-section">
+  <form action="/" method="GET" class="search-form">
+    <input
+      type="search"
+      name="search"
+      placeholder="Search messages..."
+      value="<%= search || ''%>"
+      aria-label="Search messages"
+    />
+    <button type="submit">Search</button>
+  </form>
+</section>
+
       <section class="messages-section">
         <div class="messages-header">
           <div>
@@ -26,9 +40,9 @@
           <% messages.forEach((message, index) => { %>
             <article class="message-card">
               <div class="message-author">
-                <div class="author-avatar"><%= message.user.charAt(0).toUpperCase() %></div>
+                <div class="author-avatar"><%= message.username.charAt(0).toUpperCase() %></div>
                 <div class="author-info">
-                  <h3><%= message.user %></h3>
+                  <h3><%= message.username %></h3>
                   <p class="message-date"><%= message.added.toLocaleDateString() %></p>
                 </div>
                 <form action="/delete/<%=message.id%>" method="POST" class="delete-form">

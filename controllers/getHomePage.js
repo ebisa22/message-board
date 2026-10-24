@@ -1,7 +1,9 @@
-import db from "../db.js";
+import db from "../db/queries.js";
 
 const getHomePage=async (req,res)=>{
-    res.render('index',{messages:db.messages,title:'Home'})
+    const username=req.query.search;
+    const messages = await db.getAllMessages(username);
+    res.render('index',{messages,title:'Home',search:username})
 }
 
 export default getHomePage
